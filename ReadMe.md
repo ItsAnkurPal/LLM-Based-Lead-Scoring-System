@@ -88,11 +88,38 @@ Accepts a single lead object and returns score, category (`Hot`, `Warm`, `Cold`)
 
 ## 📷 Screenshots
 
-- ![API Swagger UI](./Screenshots/LLM%20Lead%20Scoring%20API%20-%20Swagger%20UI%20-%20Input.png)
-- ![API Response](./Screenshots/Output.png)
-- ![Streamlit UI](./Screenshots/Streamlit%20-%20UI.png)
+- ![API Swagger UI](LLM Lead Scoring API - Swagger UI - Input.png)
+- ![API Response](Output.png)
+- ![Streamlit UI](Streamlit - UI.png)
 
 ---
+
+## Prompt Used
+
+```python
+"""Analyze the following lead and assign a score from 0 to 100 based on:
+- Buying intent (how interested they seem)
+- Company fit (e.g., industry, size)
+- Job title relevance (decision-maker or not)
+- Source quality 
+
+Lead Details are given Below:
+Name: {lead['name']}
+Email: {lead['email']}
+Company: {lead['company']}
+Title: {lead['title']}
+Industry: {lead['industry']}
+Location: {lead['location']}
+Source: {lead['source']}
+Inquiry Message: "{lead['inquiry']}"
+
+Respond in this format (JSON only, no markdown or extra text):
+{{
+  "score": 85,
+  "explanation": "Strong buying intent, relevant title, came via demo request."
+}}
+"""
+```
 
 ## 🧪 Testing
 
