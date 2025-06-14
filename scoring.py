@@ -30,7 +30,7 @@ You are an expert in lead qualification. Analyze the following lead and assign a
 - Job title relevance (decision-maker or not)
 - Source quality 
 
-LEAD DETAILS:
+Lead Details are given Below:
 Name: {lead['name']}
 Email: {lead['email']}
 Company: {lead['company']}
